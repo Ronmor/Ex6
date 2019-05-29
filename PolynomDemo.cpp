@@ -9,51 +9,35 @@ using ariel::Polynom, ariel::Monom;
 
 int main() {
   try {
-    Polynom p0;   // 2 kilometers
-    Polynom p1;  // 300 meters
+    Polynom p0;   
+    Polynom p1; 
 
-    cout << p0 << endl;   // Prints "2[km]"
+    cout << p0 << endl;   
     cout << p1 << endl;
 
-    cout << (p0 + p1) << endl;   // Prints "2.3[km]"
+    cout << (p0 + p1) << endl; 
 
-    cout << (p1 - p0) << endl;   // Prints "-1700[m]"
+    cout << (p1 - p0) << endl; 
 
-    /*
-    cout << boolalpha; // print booleans as strings from now on:
-    cout << (a>b) << endl;  // Prints "true"
-    cout << (a<=b) << endl;  // Prints "false"
-    cout << (a==PhysicalNumber(2000, Unit::M)) << endl;  // Prints "true"
-    */
-
-
+  
     istringstream input("1x^2+5x"); //init polynom
     input >> p0;
 
-    cout << p0 << endl;   // Prints "700[kg]"
+    cout << p0 << endl;   // Prints Polynom
 
-    cout << p0.derivative() << endl;
+    cout << p0.derivative() << endl; //prints "2x+5"
 
-    cout << (p0 += Polynom(p0)) << endl;  // prints "1700[kg]"
-    cout << p0 << endl;   // Prints "1700[kg]" since a has changed.
+    cout << (p0 += Polynom(p0)) << endl;  // prints 2 * p0
+    cout << p0 << endl;   
 
-    p0.sort();
+    p0.sort(); // sorts p0
     std::cout << "sort :"  << p0 << '\n';
 
     Monom m0(1.0 , 2) ;
-    bool b = p0.contains(m0);
-    /*
-    try {
-      cout << (a+b) << endl;
-    } catch (const std::exception& ex) {
-      cout << ex.what() << endl; // Prints "Units do not match - [m] cannot be converted to [kg]"
-    }
-    */
+    bool b = p0.contains(m0); // returs true
   }
-   catch (...) {
+   catch (...) { // if there is an error
     cout << "Unexpected exception!" << endl;
   }
-
-
   return 0;
 }
