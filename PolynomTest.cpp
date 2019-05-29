@@ -15,9 +15,9 @@ int main() {
 
     // BASIC TESTS - DO NOT CHANGE
 
-      Polynom p0;   // 2 kilometers
+      Polynom p0;   
       Polynom p1;
-      Polynom p2;   // 2 kilometers
+      Polynom p2;   
       Polynom p3;
       Monom m(1,2);
       istringstream input("1x^2+5x"); //init polynom
